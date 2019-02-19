@@ -13,7 +13,10 @@ public class PlayerDetector : MonoBehaviour
         Vector3 playerPosition = transform.position;
         Ray targetDirection = new Ray(playerPosition, transform.TransformDirection(Vector3.forward));
         if (Physics.Raycast(targetDirection, 5))
+        {
             Debug.Log("There is something here");
+            transform.Rotate(0, 90, 0);
+        }
         else
             Debug.Log("There is nothing in front of me");
 
